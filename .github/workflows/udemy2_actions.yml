@@ -11,11 +11,14 @@ jobs:
 
     steps:
       - name: Simple JS Acttion
+        #id to reference in next step
         id: id_greet
         uses: actions/hello-world-javascript-action@v1
-        with:
+        #input parameter
+        with: 
           who-to-greet: Ewa
       - name: Use previous step output
-        run: echo "{{steps.greet.outputs.time}"
+        #reference output from prev. step
+        run: echo "${{steps.id_greet.outputs.time}}"
         
 

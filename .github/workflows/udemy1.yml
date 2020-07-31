@@ -11,7 +11,12 @@ jobs:
             echo "Hello"
             mvn -version
             npm -v
-      
+        - name: something in python
+          shell: python
+          run: |
+            import platform
+            print (platform.processor())
+            
   
   
      

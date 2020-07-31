@@ -1,0 +1,21 @@
+
+
+name: Actions workflow (udemy2)
+
+on:
+  push:
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simple JS Acttion
+        id: id_greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Ewa
+      - name: Use previous step output
+        run: echo "{{steps.greet.outputs.time}"
+        
+

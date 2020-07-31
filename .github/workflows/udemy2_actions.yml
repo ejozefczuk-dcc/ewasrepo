@@ -21,4 +21,21 @@ jobs:
         #reference output from prev. step
         run: echo "${{steps.id_greet.outputs.time}}"
         
+  run-checkout-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check ls returns no files
+        run: |
+          echo "directory listing"
+          ls
+      - name: Checkout action
+        uses: actions/checkout@v2.3.1
+        #NOTE, could also just run git clone
+      - name: check ls does retunr files
+        run: |
+          echo "directory listing:"
+          ls
+          
+        
 

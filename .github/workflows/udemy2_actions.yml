@@ -3,7 +3,7 @@
 name: Actions workflow (udemy2)
 
 on:
-  push:
+  - push
 
 jobs:
   run-github-actions:

@@ -1,0 +1,19 @@
+name: My test
+
+on: [workflow_dispatch, push]
+
+jobs:
+  my-job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: multiline shell command
+          run: |
+            echo "Hello"
+            mvn -version
+            npm -v
+      
+  
+  
+     
+     
+

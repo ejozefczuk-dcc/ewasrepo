@@ -31,11 +31,20 @@ jobs:
           ls
       - name: Checkout action
         uses: actions/checkout@v2.3.1
-        #NOTE, could also just run git clone
       - name: check ls does retunr files
         run: |
           echo "directory listing:"
           ls
+      #NOTE, could also just run git clone, with usage of some variables
+      # git clone git@github:$GITHUB_REPOSITORY 
+      # or so :-)
+      - name: list github-related variables
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"
+          
           
         
 

@@ -16,6 +16,14 @@ jobs:
           run: |
             import platform
             print (platform.processor())
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: directory in Powershell
+        run: GetLocation()
+      - name: directory in Bash!
+        shell: bash
+        run: pwd
             
   
   
